@@ -1,0 +1,60 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+namespace SpaceShooter
+{
+    [RequireComponent(typeof(Rigidbody2D))]
+    public class SpaceShip : Destructible
+    {
+        /// <summary>
+        /// Масса для автоматической установки у ригидбади.
+        /// </summary>
+        [Header("Space ship")]
+        [SerializeField] private float m_Mass;
+
+        /// <summary>
+        /// Толкающая вперед сила.
+        /// </summary>
+        [SerializeField] private float m_Thrust;
+
+        /// <summary>
+        /// Вращающая сила.
+        /// </summary>
+        [SerializeField] private float m_Mobility;
+
+        /// <summary>
+        /// Максимальная линельная скорость.
+        /// </summary>
+        [SerializeField] private float m_MaxLinearVelocity;
+
+        /// <summary>
+        /// Максимальная вращательная скорость. В градусах/сек.
+        /// </summary>
+        [SerializeField] private float m_MaxAngularVelocity;
+
+        /// <summary>
+        /// Сохраненная ссылка на ригидбади.
+        /// </summary>
+        private Rigidbody2D m_Rigid;
+
+        /// <summary>
+        /// Управление линейной тягой. От -1.0 до +1.0
+        /// </summary>
+        public float ThrustControl { get; set; }
+
+        /// <summary>
+        /// Управление вращательной тягой. От -1.0 до +1.0
+        /// </summary>
+        public float TorqueControl { get; set; }
+
+        protected override void Start()
+        {
+            base.Start();
+
+            m_Rigid = GetComponent<Rigidbody2D>();
+            m_Rigid.mass = m_Mass;
+            m_Rigid.inertia = 1;
+        }
+    }
+}
