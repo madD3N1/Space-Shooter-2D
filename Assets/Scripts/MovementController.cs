@@ -7,7 +7,7 @@ namespace SpaceShooter
         public enum ControlMode
         {
             Keyboard,
-            Modile
+            Mobile
         }
 
         [SerializeField] private SpaceShip m_TargetShip;
@@ -18,7 +18,7 @@ namespace SpaceShooter
 
         private void Start()
         {
-            if(m_ControlMode == ControlMode.Modile)
+            if(m_ControlMode == ControlMode.Mobile)
                 m_MobileJoystick.gameObject.SetActive(true);
             else
                 m_MobileJoystick.gameObject.SetActive(false);
@@ -30,11 +30,11 @@ namespace SpaceShooter
 
             if (m_ControlMode == ControlMode.Keyboard)
                 ControlKeyboard();
-            if (m_ControlMode == ControlMode.Modile)
-                ControlModile();
+            if (m_ControlMode == ControlMode.Mobile)
+                ControlMobile();
         }
 
-        private void ControlModile()
+        private void ControlMobile()
         {
             Vector3 dir = m_MobileJoystick.Value;
 
