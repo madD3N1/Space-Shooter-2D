@@ -2,6 +2,9 @@ using UnityEngine;
 
 namespace SpaceShooter
 {
+    /// <summary>
+    /// Класс для управления перемещением.
+    /// </summary>
     public class MovementController : MonoBehaviour
     {
         public enum ControlMode
