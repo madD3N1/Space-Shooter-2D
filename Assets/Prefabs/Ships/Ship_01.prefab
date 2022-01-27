@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5870458728673015200}
   - component: {fileID: 6851156277471704911}
   - component: {fileID: 1660050745}
+  - component: {fileID: 4053313775630073141}
   m_Layer: 0
   m_Name: Ship_01
   m_TagString: Player
@@ -92,6 +93,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_VelocityDamageModifier: 1
   m_DamageConstant: 100
+--- !u!114 &4053313775630073141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1082767481162103592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e020dbbc4e9a62489d7572f4cba6a66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5364495038590379851
 GameObject:
   m_ObjectHideFlags: 0
