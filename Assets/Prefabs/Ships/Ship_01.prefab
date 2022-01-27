@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 9105958376593786325}
   - component: {fileID: 5870458728673015200}
   - component: {fileID: 6851156277471704911}
+  - component: {fileID: 1660050745}
   m_Layer: 0
   m_Name: Ship_01
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -69,11 +70,28 @@ MonoBehaviour:
   m_Nickname: Player
   m_Indestructible: 0
   m_HitPoints: 100
+  m_EventOnDeath:
+    m_PersistentCalls:
+      m_Calls: []
   m_Mass: 1
   m_Thrust: 1000
   m_Mobility: 2000
   m_MaxLinearVelocity: 15
   m_MaxAngularVelocity: 360
+--- !u!114 &1660050745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1082767481162103592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b04e3c96cbb6ae1409e4847e6a93dd7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_VelocityDamageModifier: 1
+  m_DamageConstant: 100
 --- !u!1 &5364495038590379851
 GameObject:
   m_ObjectHideFlags: 0
