@@ -6,10 +6,20 @@ using UnityEngine;
 
 namespace SpaceShooter
 {
+    /// <summary>
+    /// Класс, который реализует гравитационную яму.
+    /// </summary>
     [RequireComponent(typeof(CircleCollider2D))]
     public class GravityWell : MonoBehaviour
     {
+        /// <summary>
+        /// Сила притяжения.
+        /// </summary>
         [SerializeField] private float m_Force;
+
+        /// <summary>
+        /// Радиус ямы.
+        /// </summary>
         [SerializeField] private float m_Radius;
 
         private void OnTriggerStay2D(Collider2D collision)

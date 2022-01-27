@@ -55,6 +55,10 @@ namespace SpaceShooter
             }
         }
 
+        /// <summary>
+        /// Выбор новой цели для камеры.
+        /// </summary>
+        /// <param name="newTarget"> Цель камеры. </param>
         public void SetTarget(Transform newTarget)
         {
             m_Target = newTarget;

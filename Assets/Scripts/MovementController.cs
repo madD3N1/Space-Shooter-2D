@@ -7,12 +7,18 @@ namespace SpaceShooter
     /// </summary>
     public class MovementController : MonoBehaviour
     {
+        /// <summary>
+        /// Перечисление вариантов управления.
+        /// </summary>
         public enum ControlMode
         {
             Keyboard,
             Mobile
         }
 
+        /// <summary>
+        /// Корабль, которым управляет Игрок.
+        /// </summary>
         [SerializeField] private SpaceShip m_TargetShip;
         public void SetTargetShip(SpaceShip ship) => m_TargetShip = ship;
 
@@ -38,6 +44,9 @@ namespace SpaceShooter
                 ControlMobile();
         }
 
+        /// <summary>
+        /// Метод для управления с помощью телефона.
+        /// </summary>
         private void ControlMobile()
         {
             var dir = m_MobileJoystick.Value;
@@ -46,6 +55,9 @@ namespace SpaceShooter
             m_TargetShip.TorqueControl = -dir.x;
         }
 
+        /// <summary>
+        /// Метод для управления с помощью клавиатуры.
+        /// </summary>
         private void ControlKeyboard()
         {
             float thrust = 0;

@@ -2,12 +2,21 @@ using UnityEngine;
 
 namespace SpaceShooter
 {
+    /// <summary>
+    /// Класс, отвечающий за отображение заднего фона.
+    /// </summary>
     [RequireComponent(typeof(MeshRenderer))]
     public class BackgroundElement : MonoBehaviour
     {
+        /// <summary>
+        /// Сила параллакс эффекта.
+        /// </summary>
         [Range(0.0f, 4.0f)]
         [SerializeField] private float m_ParallaxPower;
 
+        /// <summary>
+        /// Масштаб текстуры.
+        /// </summary>
         [SerializeField] private float m_TextureScale;
 
         private Material m_QuadMaterial;

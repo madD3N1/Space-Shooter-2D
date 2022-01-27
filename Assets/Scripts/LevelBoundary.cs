@@ -6,17 +6,25 @@ using UnityEngine;
 
 namespace SpaceShooter
 {
+    /// <summary>
+    /// Класс, который описывает границы уровня.
+    /// </summary>
     public class LevelBoundary : SingletonBase<LevelBoundary>
     {
+        /// <summary>
+        /// Радиус границы.
+        /// </summary>
         [SerializeField] private float m_Radius;
         public float Radius => m_Radius;
 
+        /// <summary>
+        /// Перечисление возможных вариантов действий границы.
+        /// </summary>
         public enum Mode
         {
             Limit,
             Teleport
         }
-
         [SerializeField] private Mode m_LimitMode;
         public Mode LimitMode => m_LimitMode;
 

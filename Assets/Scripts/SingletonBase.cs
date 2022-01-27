@@ -1,8 +1,15 @@
 using UnityEngine;
 
+/// <summary>
+/// Базовый класс реализации паттерна Singleton.
+/// </summary>
+/// <typeparam name="T"> Тип класса. </typeparam>
 [DisallowMultipleComponent]
 public abstract class SingletonBase<T> : MonoBehaviour where T : MonoBehaviour
 {
+    /// <summary>
+    /// Флаг уничтожения объекта.
+    /// </summary>
     [Header("Singleton")]
     [SerializeField] private bool m_DontDestroyOnLoad;
 

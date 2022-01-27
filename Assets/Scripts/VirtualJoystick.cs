@@ -4,6 +4,9 @@ using UnityEngine.EventSystems;
 
 namespace SpaceShooter
 {
+    /// <summary>
+    /// Класс, реализующий виртуальный джойстик.
+    /// </summary>
     public class VirtualJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointerDownHandler
     {
         [SerializeField] private Image m_JoyBack;

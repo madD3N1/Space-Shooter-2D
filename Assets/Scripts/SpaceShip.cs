@@ -4,6 +4,9 @@ using UnityEngine;
 
 namespace SpaceShooter
 {
+    /// <summary>
+    /// Класс, отвечающий за перемещение космического корабля.
+    /// </summary>
     [RequireComponent(typeof(Rigidbody2D))]
     public class SpaceShip : Destructible
     {
