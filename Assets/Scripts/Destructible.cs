@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace SpaceShooter
 {
@@ -61,6 +62,11 @@ namespace SpaceShooter
         protected virtual void OnDeath()
         {
             Destroy(gameObject);
+
+            m_EventOnDeath?.Invoke();
         }
+
+        [SerializeField] private UnityEvent m_EventOnDeath;
+        public UnityEvent EventOnDeath => m_EventOnDeath;
     }
 }
