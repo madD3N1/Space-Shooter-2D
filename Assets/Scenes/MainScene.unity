@@ -269,7 +269,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 699009314993166326}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1660050743}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d6a4f7930f96ac1459a9680172aaa8fb, type: 3}
@@ -767,6 +767,26 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 699009314993166326}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1660050743 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1082767481162103592, guid: b9e2b8ecf2fd8d642804964545140034,
+    type: 3}
+  m_PrefabInstance: {fileID: 699009314993166326}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1660050745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1660050743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b04e3c96cbb6ae1409e4847e6a93dd7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_VelocityDamageModifier: 1
+  m_DamageConstant: 100
 --- !u!1001 &1660677196
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -962,6 +982,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Ship_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 1082767481162103592, guid: b9e2b8ecf2fd8d642804964545140034,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 9105958376593786325, guid: b9e2b8ecf2fd8d642804964545140034,
         type: 3}
