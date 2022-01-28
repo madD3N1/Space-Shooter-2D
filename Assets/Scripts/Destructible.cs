@@ -61,9 +61,9 @@ namespace SpaceShooter
         /// </summary>
         protected virtual void OnDeath()
         {
-            Destroy(gameObject);
-
             m_EventOnDeath?.Invoke();
+
+            Destroy(gameObject);
         }
 
         [SerializeField] private UnityEvent m_EventOnDeath;

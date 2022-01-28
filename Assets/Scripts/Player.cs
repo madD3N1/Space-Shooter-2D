@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 namespace SpaceShooter
 {
@@ -22,7 +23,6 @@ namespace SpaceShooter
         /// </summary>
         [SerializeField] private GameObject m_PlayerShipPrefab;
 
-
         [SerializeField] private CameraController m_CameraController;
         [SerializeField] private MovementController m_MovementController;
 
@@ -33,6 +33,13 @@ namespace SpaceShooter
 
         private void OnShipDeath()
         {
+            StartCoroutine(Death());
+        }
+
+        IEnumerator Death()
+        {
+            yield return new WaitForSecondsRealtime(2.0f);
+
             m_NumLives--;
 
             if (m_NumLives > 0)

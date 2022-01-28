@@ -950,6 +950,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3858f39c7149a0348addca4fd020e389, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_DontDestroyOnLoad: 0
   m_Radius: 30
   m_LimitMode: 0
 --- !u!4 &1758184761
