@@ -78,7 +78,7 @@ MonoBehaviour:
   m_Mass: 1
   m_Thrust: 1000
   m_Mobility: 2000
-  m_MaxLinearVelocity: 15
+  m_MaxLinearVelocity: 10
   m_MaxAngularVelocity: 360
 --- !u!114 &1660050745
 MonoBehaviour:

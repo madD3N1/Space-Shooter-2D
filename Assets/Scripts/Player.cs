@@ -38,7 +38,7 @@ namespace SpaceShooter
 
         IEnumerator Death()
         {
-            yield return new WaitForSecondsRealtime(2.0f);
+            yield return new WaitForSecondsRealtime(1.2f);
 
             m_NumLives--;
 
