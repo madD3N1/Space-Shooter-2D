@@ -81,5 +81,18 @@ namespace SpaceShooter
 
             m_Rigid.AddTorque(-m_Rigid.angularVelocity * ( m_Mobility /m_MaxAngularVelocity) * Time.fixedDeltaTime, ForceMode2D.Force);
         }
+
+        [SerializeField] private Turret[] m_Turrets;
+
+        public void Fire(TurretMode mode)
+        {
+            foreach(var turret in m_Turrets)
+            {
+                if(turret.Mode == mode)
+                {
+                    turret.Fire();
+                }
+            }
+        }
     }
 }

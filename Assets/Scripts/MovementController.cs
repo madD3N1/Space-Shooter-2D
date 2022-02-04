@@ -26,12 +26,23 @@ namespace SpaceShooter
 
         [SerializeField] private ControlMode m_ControlMode;
 
+        [SerializeField] private PointerClickHold m_MobileFirePrimary;
+        [SerializeField] private PointerClickHold m_MobileFireSecondary;
+
         private void Start()
         {
-            if(m_ControlMode == ControlMode.Mobile)
+            if (m_ControlMode == ControlMode.Mobile)
+            {
                 m_MobileJoystick.gameObject.SetActive(true);
+                m_MobileFirePrimary.gameObject.SetActive(true);
+                m_MobileFireSecondary.gameObject.SetActive(true);
+            }
             else
+            {
                 m_MobileJoystick.gameObject.SetActive(false);
+                m_MobileFirePrimary.gameObject.SetActive(false);
+                m_MobileFireSecondary.gameObject.SetActive(false);
+            }
         }
 
         private void Update()
@@ -53,6 +64,12 @@ namespace SpaceShooter
 
             m_TargetShip.ThrustControl = dir.y;
             m_TargetShip.TorqueControl = -dir.x;
+
+            if (m_MobileFirePrimary.IsHold)
+                m_TargetShip.Fire(TurretMode.Primary);
+
+            if (m_MobileFireSecondary.IsHold)
+                m_TargetShip.Fire(TurretMode.Secondary);
         }
 
         /// <summary>
@@ -74,6 +91,12 @@ namespace SpaceShooter
 
             if (Input.GetKey(KeyCode.RightArrow))
                 torque = -1.0f;
+
+            if (Input.GetKey(KeyCode.E))
+                m_TargetShip.Fire(TurretMode.Primary);
+
+            if (Input.GetKey(KeyCode.Q))
+                m_TargetShip.Fire(TurretMode.Secondary);
 
             m_TargetShip.ThrustControl = thrust;
             m_TargetShip.TorqueControl = torque;
