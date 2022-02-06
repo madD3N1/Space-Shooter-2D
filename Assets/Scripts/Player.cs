@@ -6,7 +6,7 @@ namespace SpaceShooter
     /// <summary>
     /// Класс, который описывает поведение Игрока.
     /// </summary>
-    public class Player : MonoBehaviour
+    public class Player : SingletonBase<Player>
     {
         /// <summary>
         /// Кол-во жизней.
@@ -22,6 +22,8 @@ namespace SpaceShooter
         /// Префаб корабля.
         /// </summary>
         [SerializeField] private GameObject m_PlayerShipPrefab;
+
+        public SpaceShip ActiveShip => m_Ship;
 
         [SerializeField] private CameraController m_CameraController;
         [SerializeField] private MovementController m_MovementController;

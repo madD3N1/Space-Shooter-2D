@@ -119,9 +119,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4694250672278364829}
   - component: {fileID: 7016234970268481621}
-  - component: {fileID: 6836308286980826186}
   m_Layer: 0
-  m_Name: Battery_01
+  m_Name: AddEnergyPowerup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -163,16 +162,3 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &6836308286980826186
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4694250672278364828}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d2a6c32da92b8844852b165b35c55cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Charge: 5
