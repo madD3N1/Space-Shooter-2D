@@ -44,7 +44,6 @@ namespace SpaceShooter
 
         private void OnProjectileLifeEnd(Collider2D col, Vector2 pos)
         {
-            //TODO: добавить импакт эффект
             var impactEffect = Instantiate(m_ImpactEffectPrefab);
             impactEffect.transform.position = pos;
 

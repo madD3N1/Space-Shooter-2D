@@ -47,8 +47,6 @@ namespace SpaceShooter
             projectile.SetParentShooter(m_Ship);
 
             m_RefireTimer = m_TurretProperties.RateOfFire;  
-
-            //TODO: добавить звук выстрела
         }
 
         public void AssignLoadout(TurretProperties props)
