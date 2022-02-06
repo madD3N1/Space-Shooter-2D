@@ -184,6 +184,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Nickname: 
   m_Velocity: 100
-  m_Lifetime: 1000
+  m_Lifetime: 1
   m_Damage: 20
-  m_ImpactEffectPrefab: {fileID: 0}
+  m_ImpactEffectPrefab: {fileID: 3579223708372451750, guid: 120e0354e2d01244890b9aaa39197666,
+    type: 3}
