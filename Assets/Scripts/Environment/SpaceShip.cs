@@ -116,6 +116,20 @@ namespace SpaceShooter
             m_SecondaryAmmo = Mathf.Clamp(m_SecondaryAmmo + ammo, 0, m_MaxAmmo);
         }
 
+        public void AddSpeed(float speed, float time)
+        {
+            StartCoroutine(UpSpeedCoroutine(speed, time));
+        }
+
+        IEnumerator UpSpeedCoroutine(float speed, float time)
+        {
+            m_MaxLinearVelocity += speed;
+
+            yield return new WaitForSeconds(time);
+
+            m_MaxLinearVelocity -= speed;
+        }
+
         private void InitOffensive()
         {
             m_PrimaryEnergy = m_MaxEnergy;

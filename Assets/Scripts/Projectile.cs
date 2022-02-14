@@ -21,11 +21,11 @@ namespace SpaceShooter
 
             RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.up, stepLength);
 
-            if(hit)
+            if (hit)
             {
                 Destructible dest = hit.collider.transform.root.GetComponent<Destructible>();
 
-                if(dest != null && dest != m_Parent)
+                if (dest != null && dest != m_Parent)
                 {
                     dest.ApplyDamage(m_Damage);
                 }
@@ -34,12 +34,13 @@ namespace SpaceShooter
             }
 
             m_Timer += Time.deltaTime;
-            if(m_Timer >= m_Lifetime)
+            if (m_Timer >= m_Lifetime)
             {
                 Destroy(gameObject);
             }
 
             transform.position += new Vector3(step.x, step.y, 0);
+               
         }
 
         private void OnProjectileLifeEnd(Collider2D col, Vector2 pos)

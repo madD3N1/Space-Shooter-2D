@@ -9,6 +9,8 @@ namespace SpaceShooter
 
         [SerializeField] private TurretProperties m_TurretProperties;
 
+        [SerializeField] private AudioSource m_SoundOfFire;
+
         private float m_RefireTimer;
 
         private bool CanFire => m_RefireTimer <= 0;
@@ -22,7 +24,7 @@ namespace SpaceShooter
 
         private void Update()
         {
-            if(m_RefireTimer > 0)
+            if (m_RefireTimer > 0)
             {
                 m_RefireTimer -= Time.deltaTime;
             }
@@ -40,13 +42,19 @@ namespace SpaceShooter
             if (m_Ship.DrawAmmo(m_TurretProperties.AmmoUsage) == false)
                 return;
 
+            
             Projectile projectile = Instantiate(m_TurretProperties.ProjectilePrefab).GetComponent<Projectile>();
             projectile.transform.position = transform.position;
             projectile.transform.up = transform.up;
 
             projectile.SetParentShooter(m_Ship);
-
+ 
             m_RefireTimer = m_TurretProperties.RateOfFire;  
+
+            if(m_SoundOfFire != null)
+            {
+                m_SoundOfFire.Play();
+            }
         }
 
         public void AssignLoadout(TurretProperties props)

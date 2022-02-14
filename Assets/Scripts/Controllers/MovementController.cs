@@ -96,7 +96,10 @@ namespace SpaceShooter
                 m_TargetShip.Fire(TurretMode.Primary);
 
             if (Input.GetKey(KeyCode.Q))
+            {
                 m_TargetShip.Fire(TurretMode.Secondary);
+            }
+                
 
             m_TargetShip.ThrustControl = thrust;
             m_TargetShip.TorqueControl = torque;

@@ -5,7 +5,7 @@ namespace SpaceShooter
     public enum TurretMode
     {
         Primary,
-        Secondary
+        Secondary,
     }
 
     [CreateAssetMenu]
@@ -25,8 +25,5 @@ namespace SpaceShooter
 
         [SerializeField] private int m_AmmoUsage;
         public int AmmoUsage => m_AmmoUsage;
-
-        [SerializeField] private AudioClip m_LaunchSFX;
-        public AudioClip LaunchSFX => m_LaunchSFX;
     }
 }

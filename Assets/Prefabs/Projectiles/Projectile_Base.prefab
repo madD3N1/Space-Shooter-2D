@@ -150,7 +150,7 @@ GameObject:
   - component: {fileID: 880308851837724417}
   - component: {fileID: -1329816076627968009}
   m_Layer: 0
-  m_Name: ProjectileBase
+  m_Name: Projectile_Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -186,7 +186,7 @@ MonoBehaviour:
   m_Nickname: 
   m_Velocity: 50
   m_Lifetime: 1
-  m_Damage: 20
+  m_Damage: 10
   m_ImpactEffectPrefab: {fileID: 3579223708372451750, guid: 120e0354e2d01244890b9aaa39197666,
     type: 3}
 --- !u!82 &-1329816076627968009
@@ -196,7 +196,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4510216415699137783}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 1e940d15337ad1e43b0cc1b2430d7c06, type: 3}

@@ -28,7 +28,7 @@ namespace SpaceShooter
 
             debris.transform.position = m_Area.GetRandomInsideZone();
             debris.GetComponent<Destructible>().EventOnDeath.AddListener(OnDebrisDead);
-
+            
             var rb = debris.GetComponent<Rigidbody2D>();
 
             if(rb != null && m_RandomSpeed > 0)
