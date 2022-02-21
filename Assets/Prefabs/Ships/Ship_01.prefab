@@ -504,6 +504,7 @@ MonoBehaviour:
   m_Nickname: Player
   m_Indestructible: 0
   m_HitPoints: 100
+  m_TeamId: 1
   m_EventOnDeath:
     m_PersistentCalls:
       m_Calls: []
@@ -558,7 +559,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Explosion: {fileID: 139366, guid: b185c1a9cf067374586d095111b15bd1, type: 3}
-  m_Ship: {fileID: 6851156277471704911}
+  m_Target: {fileID: 6851156277471704911}
 --- !u!1 &5364495038590379851
 GameObject:
   m_ObjectHideFlags: 0

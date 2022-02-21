@@ -236,7 +236,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6989876553879114878}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -281,12 +281,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AIBehaviour: 0
-  m_NavigationLinear: 0
-  m_NavigationAngular: 0
-  m_RandomSelectMovePointTime: 0
-  m_FindNewTargetTime: 0
-  m_ShootDelay: 0
-  m_EvadeRayLength: 0
+  m_PatrolPoints: []
+  m_NavigationLinear: 0.2
+  m_NavigationAngular: 0.25
+  m_RandomSelectMovePointTime: 5
+  m_FindNewTargetTime: 2
+  m_MaxDistanceFindTarget: 10
+  m_ShootDelay: 1.5
+  m_EvadeRayLength: 10
 --- !u!114 &3536441356709419033
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -302,6 +304,7 @@ MonoBehaviour:
   m_Nickname: Player
   m_Indestructible: 0
   m_HitPoints: 100
+  m_TeamId: 2
   m_EventOnDeath:
     m_PersistentCalls:
       m_Calls: []
@@ -356,7 +359,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Explosion: {fileID: 139366, guid: b185c1a9cf067374586d095111b15bd1, type: 3}
-  m_Ship: {fileID: 3536441356709419033}
+  m_Target: {fileID: 3536441356709419033}
 --- !u!1 &7928522240613146053
 GameObject:
   m_ObjectHideFlags: 0

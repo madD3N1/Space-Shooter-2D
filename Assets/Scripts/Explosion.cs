@@ -6,16 +6,16 @@ namespace SpaceShooter
     {
         [SerializeField] private GameObject m_Explosion;
 
-        [SerializeField] private SpaceShip m_Ship;
+        [SerializeField] private Destructible m_Target;
 
         private void Awake()
         {
-            m_Ship.EventOnDeath.AddListener(OnShipDeath);
+            m_Target.EventOnDeath.AddListener(OnShipDeath);
         }
 
         private void OnShipDeath()
         {
-            Instantiate(m_Explosion, m_Ship.transform.position, m_Explosion.transform.rotation);
+            Instantiate(m_Explosion, m_Target.transform.position, m_Explosion.transform.rotation);
         }
     }
 }

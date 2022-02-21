@@ -30,6 +30,8 @@ namespace SpaceShooter
 
         [SerializeField] private float m_FindNewTargetTime;
 
+        [SerializeField] private float m_MaxDistanceFindTarget;
+
         [SerializeField] private float m_ShootDelay;
 
         [SerializeField] private float m_EvadeRayLength;
@@ -86,7 +88,7 @@ namespace SpaceShooter
             {
                 if(m_SelectedTarget != null)
                 {
-                    m_MovePosition = m_SelectedTarget.transform.position;
+                    m_MovePosition = MakeLead();
                 }
                 else
                 {
@@ -119,7 +121,6 @@ namespace SpaceShooter
                                 {
                                     m_IsForward = false;
                                     m_IndexCurrentPatrolPoint--;
-                                    m_MovePosition = m_PatrolPoints[m_IndexCurrentPatrolPoint].transform.position;
                                 }
                                 else
                                 {
@@ -132,7 +133,6 @@ namespace SpaceShooter
                                 {
                                     m_IsForward = true;
                                     m_IndexCurrentPatrolPoint++;
-                                    m_MovePosition = m_PatrolPoints[m_IndexCurrentPatrolPoint].transform.position;
                                 }
                                 else
                                 {
@@ -154,7 +154,7 @@ namespace SpaceShooter
         {
             if(Physics2D.Raycast(transform.position, transform.up, m_EvadeRayLength) == true)
             {
-                m_MovePosition = transform.position + transform.right * 20.0f;
+                m_MovePosition = transform.position + transform.right * 100.0f;
             }
         }
 
@@ -182,7 +182,7 @@ namespace SpaceShooter
         {
             if (m_FindNewTargetTimer.IsFinished == true)
             {
-                m_SelectedTarget = FindNearestDestructableTarget();
+                m_SelectedTarget = FindNearestDestructableTarget(m_MaxDistanceFindTarget);
 
                 m_FindNewTargetTimer.Restart();
             }
@@ -201,10 +201,8 @@ namespace SpaceShooter
             }
         }
 
-        private Destructible FindNearestDestructableTarget()
+        private Destructible FindNearestDestructableTarget(float maxDist)
         {
-            float maxDist = float.MaxValue;
-
             Destructible potentialTarget = null;
 
             foreach(var dest in Destructible.AllDestructibles)
@@ -225,6 +223,11 @@ namespace SpaceShooter
             }
 
             return potentialTarget;
+        }
+
+        private Vector3 MakeLead()
+        {
+            return m_SelectedTarget.transform.position + Vector3.up;        
         }
 
         #region Timers
