@@ -140,8 +140,7 @@ namespace SpaceShooter
             {
                 m_SelectedTarget = FindNearestDestructableTarget();
 
-                // TODO: добавить для таймера функции рестарт и изменить вызов метода в следующей строке
-                m_FindNewTargetTimer.Start(m_ShootDelay);
+                m_FindNewTargetTimer.Restart();
             }
         }
 
@@ -153,8 +152,7 @@ namespace SpaceShooter
                 {
                     m_SpaceShip.Fire(TurretMode.Primary);
 
-                    // TODO: добавить для таймера функции рестарт и изменить вызов метода в следующей строке
-                    m_FireTimer.Start(m_ShootDelay);
+                    m_FireTimer.Restart();
                 }
             }
         }
