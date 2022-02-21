@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 namespace SpaceShooter
 {
@@ -13,7 +14,11 @@ namespace SpaceShooter
 
         [SerializeField] private AIBehaviour m_AIBehaviour;
 
-        [SerializeField] private AIPointPatrol m_PatrolPoint;
+        [SerializeField] private List<AIPointPatrol> m_PatrolPoints;
+
+        private int m_IndexCurrentPatrolPoint;
+
+        private bool m_IsForward;
 
         [Range(0.0f, 1.0f)]
         [SerializeField] private float m_NavigationLinear;
@@ -44,6 +49,9 @@ namespace SpaceShooter
         private void Start()
         {
             m_SpaceShip = GetComponent<SpaceShip>();
+
+            m_IndexCurrentPatrolPoint = 0;
+            m_IsForward = true;
 
             InitTimers();
         }
@@ -82,24 +90,60 @@ namespace SpaceShooter
                 }
                 else
                 {
-                    if(m_PatrolPoint != null)
+                    if (m_PatrolPoints != null)
                     {
-                        bool isInsidePatrolZone = (m_PatrolPoint.transform.position - transform.position).sqrMagnitude < m_PatrolPoint.Radius * m_PatrolPoint.Radius;
+                        bool isInsidePatrolZone = (m_PatrolPoints[m_IndexCurrentPatrolPoint].transform.position - transform.position).sqrMagnitude
+                                                    < m_PatrolPoints[m_IndexCurrentPatrolPoint].Radius * m_PatrolPoints[m_IndexCurrentPatrolPoint].Radius;
 
-                        if(isInsidePatrolZone == true)
+                        if (isInsidePatrolZone == true)
                         {
-                            if (m_RandomizeDirectionTimer.IsFinished == true)
+                            if (m_PatrolPoints.Count == 1)
                             {
-                                Vector2 newPoint = Random.onUnitSphere * m_PatrolPoint.Radius + m_PatrolPoint.transform.position;
+                                if (m_RandomizeDirectionTimer.IsFinished == true)
+                                {
+                                    Vector2 newPoint = Random.onUnitSphere * m_PatrolPoints[m_IndexCurrentPatrolPoint].Radius + m_PatrolPoints[m_IndexCurrentPatrolPoint].transform.position;
 
-                                m_MovePosition = newPoint;
+                                    m_MovePosition = newPoint;
 
-                                m_RandomizeDirectionTimer.Start(m_RandomSelectMovePointTime);
+                                    m_RandomizeDirectionTimer.Start(m_RandomSelectMovePointTime);
+
+                                    return;
+                                }
+                                else
+                                    return;
                             }
+
+                            if (m_IsForward == true)
+                            {
+                                if (m_IndexCurrentPatrolPoint == m_PatrolPoints.Count - 1)
+                                {
+                                    m_IsForward = false;
+                                    m_IndexCurrentPatrolPoint--;
+                                    m_MovePosition = m_PatrolPoints[m_IndexCurrentPatrolPoint].transform.position;
+                                }
+                                else
+                                {
+                                    m_IndexCurrentPatrolPoint++;
+                                }
+                            }
+                            else
+                            {
+                                if (m_IndexCurrentPatrolPoint == 0)
+                                {
+                                    m_IsForward = true;
+                                    m_IndexCurrentPatrolPoint++;
+                                    m_MovePosition = m_PatrolPoints[m_IndexCurrentPatrolPoint].transform.position;
+                                }
+                                else
+                                {
+                                    m_IndexCurrentPatrolPoint--;
+                                }
+                            }
+
                         }
                         else
                         {
-                            m_MovePosition = m_PatrolPoint.transform.position;
+                            m_MovePosition = m_PatrolPoints[m_IndexCurrentPatrolPoint].transform.position;
                         }
                     }
                 }
@@ -202,7 +246,7 @@ namespace SpaceShooter
         public void SetPatrolBehaviour(AIPointPatrol point)
         {
             m_AIBehaviour = AIBehaviour.Patrol;
-            m_PatrolPoint = point;
+            m_PatrolPoints[m_IndexCurrentPatrolPoint] = point;
         }
 
         #endregion
