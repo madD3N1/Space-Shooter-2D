@@ -76,10 +76,10 @@ namespace SpaceShooter
         private void UpdateBehaviourPatrol()
         {
             ActionFindNewMovePosition();
+            ActionAvadeCollision();
             ActionControlShip();
             ActionFindNewAttackTarget();
-            ActionFire();
-            ActionAvadeCollision();
+            ActionFire();      
         }
 
         private void ActionFindNewMovePosition()
@@ -152,7 +152,8 @@ namespace SpaceShooter
 
         private void ActionAvadeCollision()
         {
-            if(Physics2D.Raycast(transform.position, transform.up, m_EvadeRayLength) == true)
+            if(Physics2D.Raycast(transform.position + transform.up, transform.up, m_EvadeRayLength) == true
+                || Physics2D.Raycast(transform.position + -transform.right, -transform.right, m_EvadeRayLength) == true)
             {
                 m_MovePosition = transform.position + transform.right * 100.0f;
             }
@@ -227,7 +228,25 @@ namespace SpaceShooter
 
         private Vector3 MakeLead()
         {
-            return m_SelectedTarget.transform.position + Vector3.up;        
+            var newPos = new Vector3();
+            var rand = Random.Range(0, 2);
+            
+            if(rand == 0)
+            {
+                newPos = m_SelectedTarget.transform.position + m_SelectedTarget.transform.right * -2.5f + Vector3.up * 2;
+            }
+            
+            if(rand == 1)
+            {
+                newPos = m_SelectedTarget.transform.position + m_SelectedTarget.transform.right * 2.5f + Vector3.up * 2;
+            } 
+            
+            if(rand == 2)
+            {
+                newPos = m_SelectedTarget.transform.position + m_SelectedTarget.transform.right;
+            }
+
+            return newPos;
         }
 
         #region Timers

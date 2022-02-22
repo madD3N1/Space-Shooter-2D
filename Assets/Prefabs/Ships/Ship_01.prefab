@@ -504,7 +504,7 @@ MonoBehaviour:
   m_Nickname: Player
   m_Indestructible: 0
   m_HitPoints: 100
-  m_TeamId: 1
+  m_TeamId: 0
   m_EventOnDeath:
     m_PersistentCalls:
       m_Calls: []
@@ -533,7 +533,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_VelocityDamageModifier: 1
-  m_DamageConstant: 100
+  m_DamageConstant: 10
 --- !u!114 &4053313775630073141
 MonoBehaviour:
   m_ObjectHideFlags: 0

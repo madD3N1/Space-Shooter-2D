@@ -223,7 +223,7 @@ GameObject:
   - component: {fileID: 6217086930923393635}
   - component: {fileID: 7928522241411004378}
   m_Layer: 0
-  m_Name: Ship_AI
+  m_Name: Ship_AI_Team_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -305,7 +305,7 @@ MonoBehaviour:
   m_Nickname: Player
   m_Indestructible: 0
   m_HitPoints: 100
-  m_TeamId: 0
+  m_TeamId: 1
   m_EventOnDeath:
     m_PersistentCalls:
       m_Calls: []
@@ -319,7 +319,7 @@ MonoBehaviour:
   - {fileID: 7928522240869340369}
   - {fileID: 7928522240613146051}
   m_MaxEnergy: 100
-  m_MaxAmmo: 100
+  m_MaxAmmo: 1000
   m_EnergyRegenPerSecond: 35
 --- !u!114 &7928522242369745519
 MonoBehaviour:
