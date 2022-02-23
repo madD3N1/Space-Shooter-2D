@@ -68,10 +68,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Nickname: SmallAsteroid
   m_Indestructible: 0
-  m_HitPoints: 20
+  m_HitPoints: 10
+  m_TeamId: 0
   m_EventOnDeath:
     m_PersistentCalls:
       m_Calls: []
+  m_ScoreValue: 1
 --- !u!1 &1707832603944001508
 GameObject:
   m_ObjectHideFlags: 0

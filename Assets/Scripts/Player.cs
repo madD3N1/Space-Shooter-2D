@@ -8,6 +8,8 @@ namespace SpaceShooter
     /// </summary>
     public class Player : SingletonBase<Player>
     {
+        #region Properties
+
         /// <summary>
         /// Кол-во жизней.
         /// </summary>
@@ -28,10 +30,18 @@ namespace SpaceShooter
         [SerializeField] private CameraController m_CameraController;
         [SerializeField] private MovementController m_MovementController;
 
+        #endregion
+
+        #region Unity Events
+
         private void Start()
         {
             m_Ship.EventOnDeath.AddListener(OnShipDeath);
         }
+
+        #endregion
+
+        #region Private API
 
         private void OnShipDeath()
         {
@@ -63,5 +73,25 @@ namespace SpaceShooter
             m_CameraController.SetTarget(m_Ship.transform);
             m_MovementController.SetTargetShip(m_Ship);
         }
+
+        #endregion
+
+        #region Score
+
+        public int Score { get; private set; }
+
+        public int NumKills { get; private set; }
+
+        public void AddKill()
+        {
+            NumKills++;
+        }
+
+        public void AddScore(int num)
+        {
+            Score += num;
+        }
+
+        #endregion
     }
 }

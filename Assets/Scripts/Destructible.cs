@@ -10,6 +10,7 @@ namespace SpaceShooter
     public class Destructible : Entity
     {
         #region Properties
+
         /// <summary>
         /// Объект игнорирует повреждения.
         /// </summary>
@@ -26,6 +27,7 @@ namespace SpaceShooter
         /// </summary>
         private int m_CurrentHitPoints;
         public int HitPoints => m_CurrentHitPoints;
+
         #endregion
 
         #region Unity Events
@@ -84,12 +86,24 @@ namespace SpaceShooter
             m_AllDestructibles.Remove(this);
         }
 
+        #region Teams
+
         public const int TeamIdNeutral = 0;
 
         [SerializeField] private int m_TeamId;
         public int TeamId => m_TeamId;
 
+        #endregion
+
         [SerializeField] private UnityEvent m_EventOnDeath;
         public UnityEvent EventOnDeath => m_EventOnDeath;
+
+        #region Score
+
+        [SerializeField] private int m_ScoreValue;
+        public int ScoreValue => m_ScoreValue;
+
+        #endregion
+
     }
 }

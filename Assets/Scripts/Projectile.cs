@@ -4,6 +4,8 @@ namespace SpaceShooter
 {
     public class Projectile : Entity
     {
+        #region Properties
+
         [SerializeField] private float m_Velocity;
 
         [SerializeField] private float m_Lifetime;
@@ -14,6 +16,10 @@ namespace SpaceShooter
 
         private float m_Timer;
 
+        #endregion
+
+        #region Unity Events
+
         private void Update()
         {
             float stepLength = Time.deltaTime * m_Velocity;
@@ -23,11 +29,16 @@ namespace SpaceShooter
 
             if (hit)
             {
-                Destructible dest = hit.collider.transform.root.GetComponent<Destructible>();
+                var dest = hit.collider.transform.root.GetComponent<Destructible>();
 
                 if (dest != null && dest != m_Parent)
                 {
                     dest.ApplyDamage(m_Damage);
+
+                    if(m_Parent == Player.Instance.ActiveShip)
+                    {
+                        Player.Instance.AddScore(dest.ScoreValue);
+                    }
                 }
 
                 OnProjectileLifeEnd(hit.collider, hit.point);
@@ -42,6 +53,8 @@ namespace SpaceShooter
             transform.position += new Vector3(step.x, step.y, 0);
                
         }
+
+        #endregion
 
         private void OnProjectileLifeEnd(Collider2D col, Vector2 pos)
         {

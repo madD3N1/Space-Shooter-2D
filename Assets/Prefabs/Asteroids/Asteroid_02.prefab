@@ -69,10 +69,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Nickname: BigAsteroid
   m_Indestructible: 0
-  m_HitPoints: 50
+  m_HitPoints: 40
+  m_TeamId: 0
   m_EventOnDeath:
     m_PersistentCalls:
       m_Calls: []
+  m_ScoreValue: 3
 --- !u!114 &2814294382784973000
 MonoBehaviour:
   m_ObjectHideFlags: 0
