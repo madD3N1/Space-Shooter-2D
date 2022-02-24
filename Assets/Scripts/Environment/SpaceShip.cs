@@ -30,11 +30,16 @@ namespace SpaceShooter
         /// Максимальная линельная скорость.
         /// </summary>
         [SerializeField] private float m_MaxLinearVelocity;
+        public float MaxLinearVelocity => m_MaxLinearVelocity;
 
         /// <summary>
         /// Максимальная вращательная скорость. В градусах/сек.
         /// </summary>
         [SerializeField] private float m_MaxAngularVelocity;
+        public float MaxAngularVelocity => m_MaxAngularVelocity;
+
+        [SerializeField] private Sprite m_PreviewImage;
+        public Sprite PreviewImage => m_PreviewImage;
 
         /// <summary>
         /// Сохраненная ссылка на ригидбади.

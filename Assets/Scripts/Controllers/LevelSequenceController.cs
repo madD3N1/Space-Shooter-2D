@@ -12,6 +12,8 @@ namespace SpaceShooter
         public Episode CurrentEpisode { get; private set; }
 
         public int CurrentLevel { get; private set; }
+
+        public static SpaceShip PlayerShip { get; set; }
         
         #endregion
 
@@ -32,10 +34,11 @@ namespace SpaceShooter
 
         public void FinishCurrentLevel(bool success)
         {
-
+            if (success)
+                AdvanceLevel();
         }
 
-        public void AvanceLevel()
+        public void AdvanceLevel()
         {
             CurrentLevel++;
 
