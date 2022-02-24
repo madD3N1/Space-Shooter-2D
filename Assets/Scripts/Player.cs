@@ -45,7 +45,6 @@ namespace SpaceShooter
         private void Start()
         {
             Respawn();
-            m_Ship.EventOnDeath.AddListener(OnShipDeath);
         }
 
         #endregion
