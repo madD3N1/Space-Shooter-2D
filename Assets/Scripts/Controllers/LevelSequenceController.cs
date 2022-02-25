@@ -13,6 +13,10 @@ namespace SpaceShooter
 
         public int CurrentLevel { get; private set; }
 
+        public bool LastLevelResult { get; private set; }
+
+        public PlayerStatistics LevelStatistics { get; private set; }
+
         public static SpaceShip PlayerShip { get; set; }
         
         #endregion
@@ -22,7 +26,8 @@ namespace SpaceShooter
             CurrentEpisode = episode;
             CurrentLevel = 0;
 
-            // TODO: сброс статов перед началом эпизода
+            LevelStatistics = new PlayerStatistics();
+            LevelStatistics.Reset();
 
             SceneManager.LoadScene(episode.Levels[CurrentLevel]);
         }
@@ -34,12 +39,16 @@ namespace SpaceShooter
 
         public void FinishCurrentLevel(bool success)
         {
-            if (success)
-                AdvanceLevel();
+            LastLevelResult = success;
+            CalculateLevelStatistic();
+
+            ResultPanelController.Instance.ShowResult(LevelStatistics, LastLevelResult);
         }
 
         public void AdvanceLevel()
         {
+            LevelStatistics.Reset();
+
             CurrentLevel++;
 
             if(CurrentEpisode.Levels.Length <= CurrentLevel)
@@ -50,6 +59,13 @@ namespace SpaceShooter
             {
                 SceneManager.LoadScene(CurrentEpisode.Levels[CurrentLevel]);
             }
+        }
+
+        private void CalculateLevelStatistic()
+        {
+            LevelStatistics.numKills = Player.Instance.NumKills;
+            LevelStatistics.score = Player.Instance.Score;
+            LevelStatistics.time = (int)LevelController.Instance.LevelTime;
         }
     }
 }
