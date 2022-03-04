@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace SpaceShooter
 {
-    public class PlayerStatistics : MonoBehaviour
+    public class PlayerStatistics    
     {
         public int numKills;
 

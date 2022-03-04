@@ -68,7 +68,7 @@ namespace SpaceShooter
             }
             else
             {
-                LevelSequenceController.Instance.FinishCurrentLevel(false);
+                LevelSequenceController.Instance?.FinishCurrentLevel(false);
             }
         }
 

@@ -8,12 +8,12 @@ namespace SpaceShooter
 
         [SerializeField] private Destructible m_Target;
 
-        private void Awake()
+        private void Start()
         {
-            m_Target.EventOnDeath.AddListener(OnShipDeath);
+            m_Target.EventOnDeath.AddListener(OnDeath);
         }
 
-        private void OnShipDeath()
+        private void OnDeath()
         {
             Instantiate(m_Explosion, m_Target.transform.position, m_Explosion.transform.rotation);
         }

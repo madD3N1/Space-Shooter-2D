@@ -51,6 +51,7 @@ namespace SpaceShooter
         private void Start()
         {
             m_SpaceShip = GetComponent<SpaceShip>();
+            m_SpaceShip.EventOnDeath.AddListener(OnDeath);
 
             m_IndexCurrentPatrolPoint = 0;
             m_IsForward = true;
@@ -247,6 +248,11 @@ namespace SpaceShooter
             }
 
             return newPos;
+        }
+
+        private void OnDeath()
+        {
+            Player.Instance.AddKill();
         }
 
         #region Timers

@@ -20,7 +20,7 @@ namespace SpaceShooter
         private bool m_IsLevelCompleted;
 
         private float m_LevelTime;
-        public float LevelTime => LevelTime;
+        public float LevelTime => m_LevelTime;
 
         private void Start()
         {

@@ -42,7 +42,7 @@ namespace SpaceShooter
             LastLevelResult = success;
             CalculateLevelStatistic();
 
-            ResultPanelController.Instance.ShowResult(LevelStatistics, LastLevelResult);
+            ResultPanelController.Instance?.ShowResult(LevelStatistics, LastLevelResult);
         }
 
         public void AdvanceLevel()
@@ -51,7 +51,7 @@ namespace SpaceShooter
 
             CurrentLevel++;
 
-            if(CurrentEpisode.Levels.Length <= CurrentLevel)
+            if(CurrentEpisode.Levels.Length >= CurrentLevel)
             {
                 SceneManager.LoadScene(MainMenuSceneNickname);
             }
@@ -63,9 +63,17 @@ namespace SpaceShooter
 
         private void CalculateLevelStatistic()
         {
-            LevelStatistics.numKills = Player.Instance.NumKills;
-            LevelStatistics.score = Player.Instance.Score;
+            if ((int)LevelController.Instance.LevelTime <= LevelController.Instance.ReferenceTime)
+                LevelStatistics.score = Player.Instance.Score * 2;
+            else
+                LevelStatistics.score = Player.Instance.Score;
+
             LevelStatistics.time = (int)LevelController.Instance.LevelTime;
+            LevelStatistics.numKills = Player.Instance.NumKills;
+
+            GlobalPlayerStatistics.Instance?.AddScore(LevelStatistics.score);
+            GlobalPlayerStatistics.Instance?.AddKills(LevelStatistics.numKills);
+            GlobalPlayerStatistics.Instance?.AddTime(LevelStatistics.time);
         }
     }
 }

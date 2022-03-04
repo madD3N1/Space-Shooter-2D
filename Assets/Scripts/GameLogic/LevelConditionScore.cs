@@ -17,7 +17,6 @@ namespace SpaceShooter
                     if(Player.Instance.Score >= score)
                     {
                         m_Reached = true;
-                        Debug.Log("Reached!");
                     }
                 }
 

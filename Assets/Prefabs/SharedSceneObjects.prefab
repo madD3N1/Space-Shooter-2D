@@ -634,7 +634,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_DontDestroyOnLoad: 0
-  m_ReferenceTime: 0
+  m_ReferenceTime: 120
   m_EventLevelCompleted:
     m_PersistentCalls:
       m_Calls: []
@@ -721,8 +721,7 @@ MonoBehaviour:
   m_DontDestroyOnLoad: 0
   m_NumLives: 3
   m_Ship: {fileID: 0}
-  m_PlayerShipPrefab: {fileID: 1082767481162103592, guid: b9e2b8ecf2fd8d642804964545140034,
-    type: 3}
+  m_PlayerShipPrefab: {fileID: 0}
   m_CameraController: {fileID: 4001629071305987511}
   m_MovementController: {fileID: 4001629071305987508}
 --- !u!1 &4001629071379108743

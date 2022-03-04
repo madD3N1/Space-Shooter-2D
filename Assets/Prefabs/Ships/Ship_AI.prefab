@@ -302,7 +302,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6a4f7930f96ac1459a9680172aaa8fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Nickname: Player
+  m_Nickname: 
   m_Indestructible: 0
   m_HitPoints: 100
   m_TeamId: 0
@@ -315,6 +315,7 @@ MonoBehaviour:
   m_Mobility: 2000
   m_MaxLinearVelocity: 10
   m_MaxAngularVelocity: 360
+  m_PreviewImage: {fileID: 0}
   m_Turrets:
   - {fileID: 7928522242215591548}
   - {fileID: 7928522240869340369}
