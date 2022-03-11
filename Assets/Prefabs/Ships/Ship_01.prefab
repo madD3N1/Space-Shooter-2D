@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 156168851}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.453, z: 0}
+  m_LocalPosition: {x: 0, y: 0.482, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 9105958376593786325}
@@ -169,7 +169,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 402930565}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.374, y: -0.116, z: 0}
+  m_LocalPosition: {x: 0.231, y: 0.474, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 9105958376593786325}
@@ -312,7 +312,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1774326056}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.369, y: -0.107, z: 0}
+  m_LocalPosition: {x: -0.231, y: 0.473, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 9105958376593786325}
@@ -513,7 +513,7 @@ MonoBehaviour:
   m_Thrust: 1000
   m_Mobility: 2000
   m_MaxLinearVelocity: 10
-  m_MaxAngularVelocity: 360
+  m_MaxAngularVelocity: 300
   m_PreviewImage: {fileID: 21300000, guid: 3c17c48223eadb347855f9650eb37ed6, type: 3}
   m_Turrets:
   - {fileID: 1774326058}
@@ -614,7 +614,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e2a3b44ec1f37a34986caa5f191c485b, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -702,8 +702,8 @@ TrailRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
-  m_Time: 5
+  m_SortingOrder: 0
+  m_Time: 1
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -711,8 +711,8 @@ TrailRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0.003643036
-        value: 0.2795243
+        time: 0
+        value: 0.2642107
         inSlope: -0.202605
         outSlope: -0.202605
         tangentMode: 0
@@ -720,23 +720,23 @@ TrailRenderer:
         inWeight: 0.33333334
         outWeight: 0.17534451
       - serializedVersion: 3
-        time: 0.6630062
+        time: 0.3451351
         value: 0
-        inSlope: -1.2127863
-        outSlope: -1.2127863
+        inSlope: -1.4884415
+        outSlope: -1.4884415
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0.113236174
+        inWeight: 0.32774568
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.8396226, g: 0.65568167, b: 0.5109024, a: 1}
-      key1: {r: 0.9622642, g: 0.4525013, b: 0.013616921, a: 0.93333334}
-      key2: {r: 0.735849, g: 0.15915358, b: 0.024296915, a: 1}
-      key3: {r: 0.5471698, g: 0.03728424, b: 0.028390888, a: 0}
+      key0: {r: 0.76517445, g: 0.87890476, b: 0.8962264, a: 1}
+      key1: {r: 0.24875402, g: 0.7047311, b: 0.8113208, a: 0.93333334}
+      key2: {r: 0.02352941, g: 0.35692754, b: 0.7372549, a: 1}
+      key3: {r: 0.027450988, g: 0.15211862, b: 0.54901963, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
       key5: {r: 0, g: 0, b: 0, a: 0}
       key6: {r: 0, g: 0, b: 0, a: 0}

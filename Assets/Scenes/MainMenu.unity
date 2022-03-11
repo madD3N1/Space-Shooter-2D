@@ -667,7 +667,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e1cfaa0cc8e01e409154772946ea628, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Prefab: {fileID: 6851156277471704911, guid: ad8da2e8e25577841bb35ea6cb489688,
+  m_Prefab: {fileID: 6851156277471704911, guid: b9ecfcc6c5f4f6943a9a059e160ca3c8,
     type: 3}
   m_Shipname: {fileID: 717275873}
   m_Hitpoints: {fileID: 1653813715}
@@ -5964,7 +5964,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e1cfaa0cc8e01e409154772946ea628, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Prefab: {fileID: 6851156277471704911, guid: ad8da2e8e25577841bb35ea6cb489688,
+  m_Prefab: {fileID: 6851156277471704911, guid: 4fad8e5978427a7478e2aae907aea16d,
     type: 3}
   m_Shipname: {fileID: 1404554283}
   m_Hitpoints: {fileID: 1351545657}
