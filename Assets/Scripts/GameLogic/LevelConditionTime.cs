@@ -6,21 +6,30 @@ namespace SpaceShooter
     {
         [SerializeField] private int time;
 
+        private int currentTime;
+
         private void Start()
         {
-            LevelController.Instance.ReferenceTime = time;
+            currentTime = time;
         }
 
         private void Update()
         {
-            time -= (int)Time.deltaTime;
+            currentTime -= (int)Time.deltaTime;
         }
 
         bool ILevelCondition.IsCompleted
         {
             get
             {
-                return true;
+                if(currentTime <= 0)
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }      
             }
         }
     }
